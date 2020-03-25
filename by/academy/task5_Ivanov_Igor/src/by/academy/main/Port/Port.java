@@ -24,7 +24,6 @@ public class Port {
         for (int i = 0; i < numberOfShip; i++)
             portMass += ship[i].getTotalMassShip();
         return portMass;
-
     }
 
     @Override
