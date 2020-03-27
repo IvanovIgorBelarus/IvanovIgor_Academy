@@ -1,14 +1,11 @@
 package task1;
 
-public class CalculatorWithOperator implements ICalculator {
-    public CalculatorWithOperator() {
-    }
-
+public class CalculatorWithMath implements ICalculator {
+    public CalculatorWithMath(){};
     @Override
     public double getDivision(double dividend, double diviver) {
         return dividend / diviver;
     }
-
     @Override
     public double getMultiplication(double firstNumber, double secondNumber) {
         return firstNumber * secondNumber;
@@ -26,19 +23,12 @@ public class CalculatorWithOperator implements ICalculator {
 
     @Override
     public double getDegreeOf(double number, double power) {
-        double result = 1;
-        if (power > 0)
-            for (int i = 0; i < power; i++) result = result * number;
-        else if (power < 0)
-            for (int i = 0; i < getAbsOfNumber(power); i++) result = 1 / result * number;
-        return result;
+        return Math.pow(number,power);
     }
 
     @Override
     public double getAbsOfNumber(double number) {
-        double result = number;
-        if (number < 0) result = number * (-1);
-        return result;
+        return Math.abs(number);
     }
 
     @Override
@@ -46,5 +36,3 @@ public class CalculatorWithOperator implements ICalculator {
         return Math.pow(number, 1 / power);
     }
 }
-
-

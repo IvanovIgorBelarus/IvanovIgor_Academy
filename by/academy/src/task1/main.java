@@ -6,6 +6,11 @@ public class main {
         //4.1 + 15 * 7 + (28 / 5) ^ 2
         float result = (float) calc.getAddition(calc.getAddition(4.1, calc.getMultiplication(15, 7)), calc.getDegreeOf(calc.getDivision(28, 5), 2));
         System.out.println("result= " + result);
+//        float result21 = result / 0;
+//        System.out.println(result21);   infinity
+//        double result21 = result / 0.0d;
+//        System.out.println(result21);   infinity
+
     }
 
 }
