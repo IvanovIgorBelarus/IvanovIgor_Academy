@@ -1,6 +1,6 @@
 package HomeWork2.task1;
 
-public enum Countries implements ICountries {
+public enum Country implements ICountries {
     RUSSIA(143420300, 17075200),
     CANADA (3280500,9976140),
     USA(295734100,9629091),
@@ -23,9 +23,15 @@ public enum Countries implements ICountries {
         return area;
     }
 
-    Countries (int population, int area) {
+    Country(int population, int area) {
         this.population=population;
         this.area=area;
     }
 
+    public static void main(String[] args) {
+        for (Country p:Country.values()) {
+            System.out.println(p+"( population: "+p.population+", area: "+p.area+" );");
+
+        }
+    }
 }
