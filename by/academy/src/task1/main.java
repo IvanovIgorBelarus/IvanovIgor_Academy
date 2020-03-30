@@ -1,5 +1,12 @@
 package task1;
 
+import com.sun.source.tree.WhileLoopTree;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class main {
     public static void main(String[] args) {
         CalculatorWithOperator calc = new CalculatorWithOperator();
@@ -11,6 +18,14 @@ public class main {
 //        double result21 = result / 0.0d;
 //        System.out.println(result21);   infinity
 
-    }
 
+
+    }
 }
+
+
+
+
+
+
+

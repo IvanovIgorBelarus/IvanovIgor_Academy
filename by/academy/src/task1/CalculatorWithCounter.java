@@ -24,7 +24,7 @@ public class CalculatorWithCounter implements ICalculator {
 
     @Override
     public double getDivision(double dividend, double diviver) {
-           //if (calculator!=CAlCUlATORWITHOPERATOR&&calculator!=CAlCUlATORWITHMATH)
+        //if (calculator!=CAlCUlATORWITHOPERATOR&&calculator!=CAlCUlATORWITHMATH)
         if (calculator == CAlCUlATORWITHOPERATOR) {
             countOperationWithOperator++;
             return calculatorOperator.getDivision(dividend, diviver);
@@ -83,7 +83,6 @@ public class CalculatorWithCounter implements ICalculator {
 
     @Override
     public double getSqrtOfNumber(double number, double power) {
-
         if (calculator == CAlCUlATORWITHOPERATOR) {
             countOperationWithOperator++;
             return calculatorOperator.getSqrtOfNumber(number, power);

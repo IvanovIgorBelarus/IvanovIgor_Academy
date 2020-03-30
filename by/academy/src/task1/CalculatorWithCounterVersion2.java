@@ -9,13 +9,14 @@ public class CalculatorWithCounterVersion2 implements ICalculator {
     public CalculatorWithCounterVersion2(CalculatorWithOperator calculatorOperator) {
         this.calculatorOperator = calculatorOperator;
     }
+
     public CalculatorWithCounterVersion2(CalculatorWithMath calculatorMath) {
         this.calculatorMath = calculatorMath;
     }
 
     public int getCountOperation() {
         if (calculatorOperator != null) return countOperationWithOperator;
-       return countOperationWithMath;
+        return countOperationWithMath;
 
     }
 
