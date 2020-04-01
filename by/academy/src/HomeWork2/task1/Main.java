@@ -3,7 +3,7 @@ package HomeWork2.task1;
 import static HomeWork2.task1.Country.*;
 
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Country.main(args);
         System.out.println();

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         CalculatorWithOperator calc = new CalculatorWithOperator();
         //4.1 + 15 * 7 + (28 / 5) ^ 2

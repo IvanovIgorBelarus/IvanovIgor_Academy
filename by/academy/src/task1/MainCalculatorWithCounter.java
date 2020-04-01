@@ -2,7 +2,7 @@ package task1;
 
 import static task1.Constans.*;
 
-public class mainCalculatorWithCounter {
+public class MainCalculatorWithCounter {
     public static void main(String[] args) {
 /**
  * ver.1 - один конструктор реадизованный через константы;

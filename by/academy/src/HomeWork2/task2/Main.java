@@ -2,7 +2,7 @@ package HomeWork2.task2;
 
 import java.lang.reflect.Array;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 //        2.1. {20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5}
 //        2.2. {1,1,2,-2,5,2,4,4,-1,-2,5}
