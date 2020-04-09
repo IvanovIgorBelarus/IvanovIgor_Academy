@@ -25,11 +25,15 @@ public class DataContainer<E extends Object> {
 
 
     public void getData() {
-                for (E e : item) {
-                    System.out.print(e);
-                }
+        for (int i = 0; i < item.length; i++) {
+            if (i % 10 == 0) System.out.println();
+            System.out.print(item[i]);
+
+        }
 
     }
+
+}
 
 //    public void getData(){
 //         for (Object data: data) {
@@ -40,4 +44,4 @@ public class DataContainer<E extends Object> {
 //     }
 
 
-}
+
