@@ -12,24 +12,23 @@ public class DataContainer<E extends Object> {
     }
 
     public void add(E[] item) {
-        for (int i=0; i<this.item.length;i++) {
+        for (int i = 0; i < this.item.length; i++) {
             if (item[i] != null) {
                 this.item[i] = item[i];
                 return;
             }
 
         }
-        this.item=Arrays.copyOf(this.item,this.item.length+1);
-        this.item[this.item.length-1]=item[this.item.length-1];
+        this.item = Arrays.copyOf(this.item, this.item.length + 1);
+        this.item[this.item.length - 1] = item[this.item.length - 1];
     }
 
 
     public void getData() {
-        for (E item : item) {
-            for (int i=0;i<10;i++)
-            System.out.print(item+". ");
-            System.out.println();
-        }
+                for (E e : item) {
+                    System.out.print(e);
+                }
+
     }
 
 //    public void getData(){
@@ -39,5 +38,6 @@ public class DataContainer<E extends Object> {
 //             System.out.println();
 //         }
 //     }
+
 
 }

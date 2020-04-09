@@ -5,7 +5,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Person[] person = new Person[100000];
+        int counter=10;
+        Person[] person = new Person[counter];
         DataContainer<Person> dataContainerPerson = new DataContainer<>(person);
         for (int i = 0; i < person.length; i++) {
             person[i] = new Person(setNick(), setPassword(), setRegistration());
@@ -18,7 +19,7 @@ public class Main {
 
 
         System.out.println("Animal container:");
-        Animal[] animal = new Animal[100000];
+        Animal[] animal = new Animal[counter];
         DataContainer<Animal> dataContainerAnimal = new DataContainer<>(animal);
         for (int i = 0; i < animal.length; i++) {
             animal[i] = new Animal(setNick(), setAge());
@@ -67,7 +68,7 @@ public class Main {
         Random random = new Random();
         int min = 1;
         int max = 30;
-        return (int) random.nextInt(max - min + 1);
+        return random.nextInt(max - min + 1);
     }
 
 }
