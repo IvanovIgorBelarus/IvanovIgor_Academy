@@ -1,4 +1,5 @@
 package task1;
+
 import java.util.regex.Pattern;
 
 /*
@@ -9,20 +10,15 @@ import java.util.regex.Pattern;
 "+" -> "-" -> "*" -> "/".
 P.s. Не решенные проблемы CalculatorStringExpression
 1. Не верно обрабатывает строки со скобками;
-2. Не знает действие операторы "^" и "||";
+2. Не знает действие операторов "^" и "||";
 3. Не знает константы "PI" и "Е";
 4. Не контролирует допустие символы (числа, операторы, скобки, константы);
  */
-
 public class CalculatorStringExpression {
-    String string;
+    public void getStringResult(String string) {
+        System.out.println(getPlusResult(string));
+    }
 
-    public CalculatorStringExpression(String string) {
-        this.string = string;
-    }
-    public double getStringResult() {
-        return getPlusResult(string);
-    }
     private double getPlusResult(String s) {
         double sum = 0;
         if (s.length() == 0) {
@@ -43,11 +39,11 @@ public class CalculatorStringExpression {
         return sum;
     }
 
-    public double getMinusResult(String s) {
+    private double getMinusResult(String s) {
         Pattern pattern = Pattern.compile("\\-");
         String[] str1 = pattern.split(s);
         Double[] number = new Double[str1.length];
-        double sum ;
+        double sum;
         int numberIndex = 0;
         try {
             number[numberIndex] = Double.parseDouble(str1[0]);
@@ -67,7 +63,7 @@ public class CalculatorStringExpression {
         return sum;
     }
 
-    public double getMultiResult(String s) {
+    private double getMultiResult(String s) {
         Pattern pattern = Pattern.compile("\\*");
         String[] str1 = pattern.split(s);
         Double[] number = new Double[str1.length];
@@ -84,7 +80,21 @@ public class CalculatorStringExpression {
         return multiResult;
     }
 
-    public double getDivisionResult(String s) {
+    private double getPowerResult(String s) {
+        CalculatorWithMath calc = new CalculatorWithMath();
+        Pattern pattern = Pattern.compile("\\^");
+        String[] str1 = pattern.split(s);
+        Double[] number = new Double[str1.length];
+        int numberIndex = 0;
+        double powerResult = 1;
+        if (str1.length == 2) {powerResult=calc.getDegreeOf(Double.parseDouble(str1[0]), Double.parseDouble(str1[1]));
+        }
+        return powerResult;
+
+
+    }
+
+    private double getDivisionResult(String s) {
         Pattern pattern = Pattern.compile("\\/");
         String[] str1 = pattern.split(s);
         Double[] number = new Double[str1.length];
@@ -124,11 +134,11 @@ public class CalculatorStringExpression {
         return divisionResult;
     }
 
-    public double getBracketResult(String s) {
+    private double getBracketResult(String s) {
         try {
-            Pattern pattern = Pattern.compile("\\(|\\)");
+            Pattern pattern = Pattern.compile("[()]");
             String[] str1 = pattern.split(s);
-            return getPlusResult(str1[str1.length-1]);
+            return getPlusResult(str1[0]);
         } catch (NumberFormatException e) {
             return getPlusResult(s);
 

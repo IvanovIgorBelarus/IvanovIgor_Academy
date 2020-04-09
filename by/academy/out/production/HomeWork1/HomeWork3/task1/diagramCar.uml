@@ -7,39 +7,39 @@
     <node x="341.0" y="333.0">HomeWork3.task1.Passenger</node>
     <node x="280.0" y="431.0">HomeWork3.task1.Seat</node>
     <node x="0.0" y="431.0">HomeWork3.task1.FuelTank</node>
-    <node x="350.0" y="169.0">HomeWork3.task1.Car</node>
+    <node x="388.0" y="169.0">HomeWork3.task1.Car</node>
     <node x="180.0" y="333.0">HomeWork3.task1.MainGarage</node>
-    <node x="268.875" y="0.0">HomeWork3.task1.ICar</node>
-    <node x="68.125" y="22.0">HomeWork3.task1.ILock</node>
-    <node x="399.0" y="431.0">HomeWork3.task1.Fuel</node>
+    <node x="305.625" y="0.0">HomeWork3.task1.ICar</node>
+    <node x="72.875" y="22.0">HomeWork3.task1.ILock</node>
     <node x="0.0" y="333.0">HomeWork3.task1.Motor</node>
+    <node x="399.0" y="431.0">HomeWork3.task1.Fuel</node>
     <node x="175.0" y="147.0">HomeWork3.task1.Man</node>
     <node x="0.0" y="191.0">HomeWork3.task1.Doors</node>
   </nodes>
   <notes />
   <edges>
     <edge source="HomeWork3.task1.Man" target="HomeWork3.task1.ILock">
-      <point x="-38.75" y="-70.5" />
-      <point x="213.75" y="122.0" />
-      <point x="184.375" y="122.0" />
+      <point x="-48.25" y="-70.5" />
+      <point x="223.25" y="122.0" />
+      <point x="189.125" y="122.0" />
       <point x="38.75" y="26.5" />
     </edge>
     <edge source="HomeWork3.task1.Car" target="HomeWork3.task1.ICar">
       <point x="0.0" y="-48.5" />
-      <point x="439.5" y="122.0" />
-      <point x="413.625" y="122.0" />
+      <point x="484.5" y="122.0" />
+      <point x="450.375" y="122.0" />
       <point x="48.25" y="48.5" />
     </edge>
     <edge source="HomeWork3.task1.Doors" target="HomeWork3.task1.ILock">
       <point x="0.0" y="-26.5" />
       <point x="77.5" y="122.0" />
-      <point x="106.875" y="122.0" />
+      <point x="111.625" y="122.0" />
       <point x="-38.75" y="26.5" />
     </edge>
     <edge source="HomeWork3.task1.Man" target="HomeWork3.task1.ICar">
-      <point x="38.75" y="-70.5" />
-      <point x="291.25" y="122.0" />
-      <point x="317.125" y="122.0" />
+      <point x="48.25" y="-70.5" />
+      <point x="319.75" y="122.0" />
+      <point x="353.875" y="122.0" />
       <point x="-48.25" y="48.5" />
     </edge>
   </edges>
