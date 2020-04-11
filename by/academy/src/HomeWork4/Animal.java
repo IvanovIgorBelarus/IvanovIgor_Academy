@@ -13,4 +13,10 @@ public class Animal {
     public String toString() {
         return "{nick:" + nick + "; Age:" + age + " } ";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Animal animal=(Animal) obj;
+        return nick==animal.nick&&age==animal.age;
+    }
 }

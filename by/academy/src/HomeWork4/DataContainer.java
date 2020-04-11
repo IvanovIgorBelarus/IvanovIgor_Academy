@@ -57,7 +57,7 @@ public class DataContainer<E> {
     void delete(E item) {
         int index = -1;
         for (int i = 0; i < data.length - 1; i++)
-            if (data[i].hashCode() == item.hashCode()) {
+            if (data[i].equals(item)) {
                 index = i;
                 break;
             }

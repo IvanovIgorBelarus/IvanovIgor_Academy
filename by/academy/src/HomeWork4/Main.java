@@ -40,7 +40,7 @@ public class Main {
         System.out.println(Arrays.toString(dataContainerAnimal.getData()));
 
         System.out.println("Animal container delete:");
-        dataContainerAnimal.delete(animal[2]);
+        dataContainerAnimal.delete(animal[0]);
         System.out.println(Arrays.toString(dataContainerAnimal.getData()));
 
     }

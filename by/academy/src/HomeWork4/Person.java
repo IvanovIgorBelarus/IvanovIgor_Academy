@@ -16,4 +16,10 @@ public class Person {
     public String toString() {
         return "{nick:" + nick + "; password:" + password + "; registration:" + registration + " } ";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Person person=(Person)obj;
+        return person.nick==nick&&person.password==password&&person.registration==registration;
+    }
 }
