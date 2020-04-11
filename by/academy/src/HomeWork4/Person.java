@@ -11,8 +11,9 @@ public class Person {
         this.password=password;
         this.registration=registration;
     }
+
     @Override
     public String toString() {
-        return "{nick:" + nick + "; password:" + password + "; registration:" + registration + " }. ";
+        return "{nick:" + nick + "; password:" + password + "; registration:" + registration + " } ";
     }
 }

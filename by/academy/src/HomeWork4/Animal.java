@@ -11,6 +11,6 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "{nick:" + nick + "; Age:" + age + " }. ";
+        return "{nick:" + nick + "; Age:" + age + " } ";
     }
 }

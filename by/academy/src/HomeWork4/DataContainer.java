@@ -2,46 +2,72 @@ package HomeWork4;
 
 
 import java.util.Arrays;
+import java.util.Comparator;
 
-public class DataContainer<E extends Object> {
-    private E[] item;
+public class DataContainer<E> {
+    private E[] data;
 
-    // ArrayList<E>data=new ArrayList<>();
-    public DataContainer(E[] item) {
-        this.item = item;
+    DataContainer(E[] item) {
+        this.data = item;
     }
 
-    public void add(E[] item) {
-        for (int i = 0; i < this.item.length; i++) {
-            if (item[i] != null) {
-                this.item[i] = item[i];
+    void add(E item) {
+        for (int i = 0; i < this.data.length; i++) {
+            if (this.data[i] == null) {
+                this.data[i] = item;
                 return;
             }
 
         }
-        this.item = Arrays.copyOf(this.item, this.item.length + 1);
-        this.item[this.item.length - 1] = item[this.item.length - 1];
+        this.data = Arrays.copyOf(this.data, this.data.length + 1);
+        this.data[this.data.length - 1] = item;
     }
 
+    E[] getData() {
+        return this.data;
 
-    public void getData() {
-        for (int i = 0; i < item.length; i++) {
-            if (i % 10 == 0) System.out.println();
-            System.out.print(item[i]);
+    }
 
+    static <E> void sort(DataContainer<E> item, Comparator<E> comparator) {
+        E bubble;
+        E[] data = item.getData();
+        boolean isSorted = false;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < data.length - 1; i++) {
+                if (comparator.compare(data[i], data[i + 1]) == 0) {
+                    isSorted = false;
+                    bubble = data[i];
+                    data[i] = data[i + 1];
+                    data[i + 1] = bubble;
+                }
+            }
         }
-
     }
 
+    void delete(int index) {
+        if ((index > data.length - 1 || (index < 0))) {
+            System.out.println("no such index");
+            return;
+        }
+        for (int i = index; i < data.length - 1; i++)
+            data[i] = data[i + 1];
+        data = Arrays.copyOf(data, data.length - 1);
+    }
+
+    void delete(E item) {
+        int index = -1;
+        for (int i = 0; i < data.length - 1; i++)
+            if (data[i].hashCode() == item.hashCode()) {
+                index = i;
+                break;
+            }
+        if (index != -1) delete(index);
+        else System.out.println("no such element");
+    }
 }
 
-//    public void getData(){
-//         for (Object data: data) {
-//             for (int i=0;i<10;i++){
-//             System.out.print(data.toString());}
-//             System.out.println();
-//         }
-//     }
+
 
 
 

@@ -1,31 +1,49 @@
 package HomeWork4;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        int counter=100000;
+        int counter = 4;
         Person[] person = new Person[counter];
         DataContainer<Person> dataContainerPerson = new DataContainer<>(person);
         for (int i = 0; i < person.length; i++) {
-            person[i] = new Person(setNick(), setPassword(), setRegistration());
-            dataContainerPerson.add(person);
+            dataContainerPerson.add(new Person(setNick(), setPassword(), setRegistration()));
         }
-        System.out.println("Person container: ");
-        dataContainerPerson.getData();
-        System.out.println();
-        System.out.println();
 
+        System.out.println("Person container: ");
+        System.out.println(Arrays.toString(dataContainerPerson.getData()));
+
+        dataContainerPerson.sort(dataContainerPerson, new PersonRegistrationComparator());
+        System.out.println("Person container sort: ");
+        System.out.println(Arrays.toString(dataContainerPerson.getData()));
+
+        dataContainerPerson.delete(2);
+        System.out.println("Person container delete: ");
+        System.out.println(Arrays.toString(dataContainerPerson.getData()));
+
+        compareDates(person[0], person[1]);
 
         System.out.println("Animal container:");
         Animal[] animal = new Animal[counter];
         DataContainer<Animal> dataContainerAnimal = new DataContainer<>(animal);
         for (int i = 0; i < animal.length; i++) {
-            animal[i] = new Animal(setNick(), setAge());
-            dataContainerAnimal.add(animal);
+            dataContainerAnimal.add(new Animal(setNick(), setAge()));
         }
-        dataContainerAnimal.getData();
+        System.out.println(Arrays.toString(dataContainerAnimal.getData()));
+
+        dataContainerAnimal.sort(dataContainerAnimal, new AnimalAgeComparator());
+        System.out.println("Animal container sort:");
+        System.out.println(Arrays.toString(dataContainerAnimal.getData()));
+
+        compareAge(animal[0], animal[1]);
+
+        System.out.println("Animal container delete:");
+        dataContainerAnimal.delete(animal[2]);
+        System.out.println(Arrays.toString(dataContainerAnimal.getData()));
+
     }
 
     private static String setNick() {
@@ -69,6 +87,48 @@ public class Main {
         int min = 1;
         int max = 30;
         return random.nextInt(max - min + 1);
+    }
+
+    private static void compareDates(Person o1, Person o2) {
+        PersonRegistrationComparator registrationComparator = new PersonRegistrationComparator();
+        switch (registrationComparator.compare(o1, o2)) {
+            case 1: {
+                System.out.println("Registration " + o1.nick + " is after " + o2.nick);
+                break;
+            }
+            case 0: {
+                System.out.println("Registration " + o2.nick + " is after " + o1.nick);
+                break;
+            }
+            case -1: {
+                System.out.println("Sorry we have some problem with date registratoin");
+                break;
+            }
+
+        }
+    }
+
+    private static void compareAge(Animal o1, Animal o2) {
+        AnimalAgeComparator ageComparator = new AnimalAgeComparator();
+        switch (ageComparator.compare(o1, o2)) {
+            case 1: {
+                System.out.println(o1.nick + " is older " + o2.nick);
+                break;
+            }
+            case 0: {
+                System.out.println(o2.nick + " is older " + o1.nick);
+                break;
+            }
+            case 2: {
+                System.out.println(o2.nick + " and " + o1.nick + "are peers");
+
+            }
+            case -1: {
+                System.out.println("Sorry we have some problem with age");
+                break;
+            }
+
+        }
     }
 
 }
