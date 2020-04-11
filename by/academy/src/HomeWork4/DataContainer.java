@@ -30,16 +30,15 @@ public class DataContainer<E> {
 
     static <E> void sort(DataContainer<E> item, Comparator<E> comparator) {
         E bubble;
-        E[] data = item.getData();
         boolean isSorted = false;
         while (!isSorted) {
             isSorted = true;
-            for (int i = 0; i < data.length - 1; i++) {
-                if (comparator.compare(data[i], data[i + 1]) == 0) {
+            for (int i = 0; i < item.getData().length - 1; i++) {
+                if (comparator.compare(item.getData()[i], item.getData()[i + 1]) == 0) {
                     isSorted = false;
-                    bubble = data[i];
-                    data[i] = data[i + 1];
-                    data[i + 1] = bubble;
+                    bubble = item.getData()[i];
+                    item.getData()[i] = item.getData()[i + 1];
+                    item.getData()[i + 1] = bubble;
                 }
             }
         }

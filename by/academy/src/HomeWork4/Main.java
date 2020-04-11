@@ -33,12 +33,11 @@ public class Main {
             dataContainerAnimal.add(new Animal(setNick(), setAge()));
         }
         System.out.println(Arrays.toString(dataContainerAnimal.getData()));
+        compareAge(animal[0], animal[1]);
 
         dataContainerAnimal.sort(dataContainerAnimal, new AnimalAgeComparator());
         System.out.println("Animal container sort:");
         System.out.println(Arrays.toString(dataContainerAnimal.getData()));
-
-        compareAge(animal[0], animal[1]);
 
         System.out.println("Animal container delete:");
         dataContainerAnimal.delete(animal[2]);
@@ -121,6 +120,7 @@ public class Main {
             }
             case 2: {
                 System.out.println(o2.nick + " and " + o1.nick + "are peers");
+                break;
 
             }
             case -1: {
