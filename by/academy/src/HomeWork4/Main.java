@@ -16,11 +16,11 @@ public class Main {
         System.out.println("Person container: ");
         System.out.println(Arrays.toString(dataContainerPerson.getData()));
 
-        dataContainerPerson.sort(dataContainerPerson, new PersonRegistrationComparator());
+        DataContainer.sort(dataContainerPerson, new PersonRegistrationComparator());
         System.out.println("Person container sort: ");
         System.out.println(Arrays.toString(dataContainerPerson.getData()));
 
-        dataContainerPerson.delete(2);
+        dataContainerPerson.delete(1);
         System.out.println("Person container delete: ");
         System.out.println(Arrays.toString(dataContainerPerson.getData()));
 
@@ -35,7 +35,7 @@ public class Main {
         System.out.println(Arrays.toString(dataContainerAnimal.getData()));
         compareAge(animal[0], animal[1]);
 
-        dataContainerAnimal.sort(dataContainerAnimal, new AnimalAgeComparator());
+        DataContainer.sort(dataContainerAnimal, new AnimalAgeComparator());
         System.out.println("Animal container sort:");
         System.out.println(Arrays.toString(dataContainerAnimal.getData()));
 

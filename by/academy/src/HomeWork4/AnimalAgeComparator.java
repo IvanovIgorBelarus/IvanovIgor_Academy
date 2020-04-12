@@ -13,7 +13,7 @@ public class AnimalAgeComparator implements Comparator<Animal> {
                 return 0;
             if (o1.age==o2.age)
                 return 2;
-            return -1;
+           return -1;
         }
     }
 
