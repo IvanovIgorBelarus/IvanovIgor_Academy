@@ -9,7 +9,7 @@ public class EasySearch implements ISearchEngine {
         for (int i = 0; i < book.length(); i++) {
             if (book.indexOf(word, i) != -1) {
                 counter++;
-                i=book.indexOf(word, i);
+                i=book.indexOf(word, i)+1;
             }
         }
         System.out.println("Слово "+word+" встречается в тексте "+counter+" раз;");

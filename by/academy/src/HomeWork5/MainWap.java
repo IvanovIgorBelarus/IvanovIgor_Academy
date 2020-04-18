@@ -3,7 +3,6 @@ package HomeWork5;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
 public class MainWap {
     public static void main(String[] args) {
@@ -21,7 +20,8 @@ public class MainWap {
         search1.seach(s, "война");
         search1.seach(s, "и");
         search1.seach(s, "мир");
-
+//        SeachWithMap.printMap();
+        SeachWithMap.printSortMap();
 
     }
 
