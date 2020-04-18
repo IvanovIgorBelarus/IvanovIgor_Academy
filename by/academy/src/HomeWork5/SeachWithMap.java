@@ -1,11 +1,12 @@
 package HomeWork5;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class SeachWithMap implements ISearchEngine {
-    static Map<String, Integer> counter = new TreeMap<>();
+    static Map<String, Integer> counter = new HashMap<>();
 
     private static Map<String, Integer> getMap(String book) {
         if (counter.size() != 0) return counter;
