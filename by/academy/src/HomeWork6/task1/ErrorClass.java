@@ -10,9 +10,8 @@ public class ErrorClass {
     ErrorClass() {
         setString();
     }
-
-     void setString() {
+     private void setString() {
         put+="error";
-        this.string = string+put;
+        setString();
     }
 }

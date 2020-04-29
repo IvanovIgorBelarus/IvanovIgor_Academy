@@ -5,14 +5,17 @@ import java.util.List;
 
 public class MainStackOverflowError {
     public static void main(String[] args) {
-        List<ErrorClass> errors = new LinkedList<>();
+
         for (; ; ) {
             try {
-                errors.add(new ErrorClass());
+                ErrorClass error = new ErrorClass();
             } catch (StackOverflowError e) {
-                throw e;
+                System.out.println("Sorry, but you have StackOverflowError");
+                break;
+
             }
-            throw new StackOverflowError("sorry, you have StackOverflowError");
+
         }
+
     }
 }
