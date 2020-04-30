@@ -1,7 +1,6 @@
 package HomeWork5;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -54,7 +53,7 @@ public class SeachWithMap implements ISearchEngine {
 
     public void seach(String book, String word) {
         getMap(book);
-        System.out.println("Слово " + word + " встречается в тексте " + counter.get(word) + " раз;");
+        System.out.println("Слово \"" + word + "\" встречается в тексте " + counter.get(word) + " раз;");
     }
 
 

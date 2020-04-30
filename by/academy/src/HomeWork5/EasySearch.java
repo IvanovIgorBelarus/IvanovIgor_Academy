@@ -12,7 +12,7 @@ public class EasySearch implements ISearchEngine {
                 i=book.indexOf(word, i)+1;
             }
         }
-        System.out.println("Слово "+word+" встречается в тексте "+counter+" раз;");
+        System.out.println("Слово \""+word+"\" встречается в тексте "+counter+" раз;");
     }
 
 }

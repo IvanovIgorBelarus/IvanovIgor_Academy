@@ -10,7 +10,7 @@ public class Main {
         Person[] person = new Person[counter];
         DataContainer<Person> dataContainerPerson = new DataContainer<>(person);
         for (int i = 0; i < person.length; i++) {
-            dataContainerPerson.add(new Person(setNick(), setPassword(), setRegistration()));
+            dataContainerPerson.add(new Person(Person.setNick(), Person.setPassword(), Person.setRegistration()));
         }
 
         System.out.println("Person container: ");
@@ -58,28 +58,28 @@ public class Main {
         }
         return variableString;
     }
-
-    private static String setPassword() {
-        String password = "0123456789";
-        int letterNumber;
-        char letter;
-        String variableString = new String();
-        for (int l = 0; l < 6; l++) {
-            letterNumber = (int) (Math.random() * 8);
-            letter = password.charAt(letterNumber);
-            variableString += letter;
-        }
-        return variableString;
-    }
-
-    private static LocalDate setRegistration() {
-        Random random = new Random();
-        int minDay = (int) LocalDate.of(1920, 1, 1).toEpochDay();
-        int maxDay = (int) LocalDate.of(2020, 1, 1).toEpochDay();
-        long randomDay = minDay + random.nextInt(maxDay - minDay);
-        LocalDate registrationDate = LocalDate.ofEpochDay(randomDay);
-        return registrationDate;
-    }
+//
+//    private static String setPassword() {
+//        String password = "0123456789";
+//        int letterNumber;
+//        char letter;
+//        String variableString = new String();
+//        for (int l = 0; l < 6; l++) {
+//            letterNumber = (int) (Math.random() * 8);
+//            letter = password.charAt(letterNumber);
+//            variableString += letter;
+//        }
+//        return variableString;
+//    }
+//
+//    private static LocalDate setRegistration() {
+//        Random random = new Random();
+//        int minDay = (int) LocalDate.of(1920, 1, 1).toEpochDay();
+//        int maxDay = (int) LocalDate.of(2020, 1, 1).toEpochDay();
+//        long randomDay = minDay + random.nextInt(maxDay - minDay);
+//        LocalDate registrationDate = LocalDate.ofEpochDay(randomDay);
+//        return registrationDate;
+//    }
 
     private static int setAge() {
         Random random = new Random();
