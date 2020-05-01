@@ -1,4 +1,4 @@
-package HomeWork7;
+package HomeWork7.Student;
 
 import HomeWork4.Person;
 

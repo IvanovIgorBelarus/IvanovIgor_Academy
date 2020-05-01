@@ -1,6 +1,7 @@
 package HomeWork7;
 
 import HomeWork4.Person;
+import HomeWork7.Student.Student;
 
 import java.io.IOException;
 import java.util.ArrayList;
