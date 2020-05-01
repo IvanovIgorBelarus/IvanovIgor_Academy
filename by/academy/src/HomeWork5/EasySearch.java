@@ -2,7 +2,7 @@ package HomeWork5;
 
 public class EasySearch implements ISearchEngine {
     @Override
-    public void seach(String book, String word) {
+    public int seach(String book, String word) {
         String regex = "\\.|!|,|\\?|\\(|\\)|-|\"|\\|\t|\n|\\*";
         book = book.replaceAll(regex, " ");
         int counter = 0;
@@ -12,7 +12,7 @@ public class EasySearch implements ISearchEngine {
                 i=book.indexOf(word, i)+1;
             }
         }
-        System.out.println("Слово \""+word+"\" встречается в тексте "+counter+" раз;");
+       return counter;
     }
 
 }

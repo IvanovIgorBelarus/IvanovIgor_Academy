@@ -12,9 +12,9 @@ public class MainWap {
         System.out.println("С помощью indexOf:");
         EasySearch search = new EasySearch();
         long start = System.currentTimeMillis();
-        search.seach(s, "война ");
-        search.seach(s, " и ");
-        search.seach(s, " мир ");
+        System.out.println(search.seach(s, "война "));
+        System.out.println(search.seach(s, " и "));
+        System.out.println(search.seach(s, " мир "));
         long finish = System.currentTimeMillis();
         System.out.println("время обработки IndexOf: "+(finish-start));
         System.out.println();
@@ -22,9 +22,9 @@ public class MainWap {
         System.out.println("С помощью Мар:");
         SeachWithMap search1 = new SeachWithMap();
         long start1 = System.currentTimeMillis();
-        search1.seach(s, "война");
-        search1.seach(s, "и");
-        search1.seach(s, "мир");
+        System.out.println(search1.seach(s, "война"));
+        System.out.println(search1.seach(s, "и"));
+        System.out.println(search1.seach(s, "мир"));
         long finish1 = System.currentTimeMillis();
         System.out.println("время обработки Map: "+(finish1-start1));
 //        SeachWithMap.printMap();

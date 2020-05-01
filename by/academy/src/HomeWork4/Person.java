@@ -2,6 +2,7 @@ package HomeWork4;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Random;
 
 public class Person implements Serializable {
@@ -14,6 +15,14 @@ public class Person implements Serializable {
         this.registration=registration;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public LocalDate getRegistration() {
+        return registration;
+    }
+
     public String getNick() {
         return nick;
     }
@@ -24,9 +33,14 @@ public class Person implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(password,registration);
+    }
+
+    @Override
     public boolean equals(Object obj) {
         Person person=(Person)obj;
-        return person.nick==nick&&person.password==password&&person.registration==registration;
+        return person.nick==nick&&person.password==password&&person.registration==registration&&person.hashCode()==hashCode();
     }
     public static String setNick() {
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

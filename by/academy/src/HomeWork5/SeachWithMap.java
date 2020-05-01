@@ -51,9 +51,9 @@ public class SeachWithMap implements ISearchEngine {
 
     }
 
-    public void seach(String book, String word) {
+    public int seach(String book, String word) {
         getMap(book);
-        System.out.println("Слово \"" + word + "\" встречается в тексте " + counter.get(word) + " раз;");
+        return counter.get(word) ;
     }
 
 

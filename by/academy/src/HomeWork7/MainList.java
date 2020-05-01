@@ -7,10 +7,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-
 public class MainList {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        ObjectInputStream in = new ObjectInputStream(new FileInputStream("students.txt"));
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("students.bin"));
         List<Person> student = new ArrayList<>();
         while (true) {
             try {
@@ -26,22 +25,12 @@ public class MainList {
             }
         });
 
-//        BufferedWriter out=new BufferedWriter(new FileWriter("sortList.txt"));
-//        for (Person person : student) {
-//                  out.append(person.toString()+"\n");
-//        }
-
-//        DataOutputStream out = new DataOutputStream(new FileOutputStream("sortList.txt"));
-//        for (Person person : student) {
-//            out.writeBytes(person.toString()+"\n");
-//        }
-
-        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortList.txt"));
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("sortList.bin"));
         for (Person person : student) {
-            out.writeUTF(person.toString()+"\n");
-            out.flush();
+            out.writeUnshared(person);
         }
         out.close();
+
 
     }
 }
