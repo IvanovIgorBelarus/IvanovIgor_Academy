@@ -1,15 +1,13 @@
 package HomeWork7;
 
 import HomeWork4.Person;
+import HomeWork7.Student.GeneratorPerson;
 import HomeWork7.Student.IWorkWithFile;
 import HomeWork7.Student.Students;
 
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
-/*
-creatListFromFile - посмотреть как можно переделать;
- */
 
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -18,7 +16,8 @@ public class Main {
 
         через класс Student решил эту задачу в один Main, надеюсь, ничего страшного =)
          */
-        IWorkWithFile student=new Students("students.bin",100000);
+        IWorkWithFile student=new Students();
+        GeneratorPerson.generator("students.bin",100000);
 
         /*
         2. Создать мэйн в котором прочитать данный файл. Сохранить всех студентов в список.
@@ -27,7 +26,6 @@ public class Main {
         ниже идет второй Main
          */
         List<Person> studentList = student.creatListFromFile("students.bin");
-
 
         /*
         3. Отсортировать студентов по алфавиту и сохранить информацию в новый файл но уже сохранять не объекты
@@ -41,7 +39,6 @@ public class Main {
             }
         });
         student.saveList("sortlist.bin",studentList);
-
         /*
         Сделал проверку сохраненного в файл sortlist.bin результата
          */
