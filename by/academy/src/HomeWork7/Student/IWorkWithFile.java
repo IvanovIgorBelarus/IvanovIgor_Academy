@@ -9,8 +9,11 @@ import java.util.List;
 public interface IWorkWithFile<E> {
     /*
       @param fileName - строка, обозначающая имя файла, из которого извлекаются данные;
-      @param List<T> t - List, в который будет сохранен результат;
        */
     List<E> creatListFromFile(String fileName) throws IOException, ClassNotFoundException;
+    /*
+    @param fileName - строка, обозначающая имя файла, в который сохраняется List<E>;
+    @param List<E> e - List, который будет сохранен в файл;
+     */
     void saveList(String fileName, List<E> student) throws IOException;
 }
