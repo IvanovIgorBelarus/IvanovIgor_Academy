@@ -1,12 +1,15 @@
 package HomeWork7;
 
 import HomeWork4.Person;
-import HomeWork7.Student.Student;
+import HomeWork7.Student.IWorkWithFile;
+import HomeWork7.Student.Students;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-
+/*
+creatListFromFile - посмотреть как можно переделать;
+ */
 
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -15,12 +18,7 @@ public class Main {
 
         через класс Student решил эту задачу в один Main, надеюсь, ничего страшного =)
          */
-        Student student=new Student();
-        /*
-         @param fileName - строка, обозначающая имя файла, в который будет сохранён результат генерации;
-         @param numberOfStudents - число результатов генерации;
-         */
-        student.generatorOfStudents("students.bin",100000);
+        IWorkWithFile student=new Students("students.bin",100000);
 
         /*
         2. Создать мэйн в котором прочитать данный файл. Сохранить всех студентов в список.
@@ -28,39 +26,29 @@ public class Main {
 
         ниже идет второй Main
          */
-        List<Person> studentList = new ArrayList<>();
-        /*
-        @param fileName - строка, обозначающая имя файла, из которого извлекаются данные;
-        @param List<T> t - List, в который будет сохранен результат;
-         */
-        studentList=student.creatListFromFile("students.bin",studentList);
+        List<Person> studentList = student.creatListFromFile("students.bin");
+
 
         /*
         3. Отсортировать студентов по алфавиту и сохранить информацию в новый файл но уже сохранять не объекты
         через writeObject а поля объектов через другие методы writeXXX;
-
         использовал метод writeUnshared в методе saveList;
-         @param List<T> t - List, в который будет отсортирован;
          */
-        student.sortList(studentList);
-
-        /*
-         @param fileName - имя файла, в который будет сохранён List;
-         @param studentList - List, который необходимо сохранить;
-         */
+        studentList.sort(new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getNick().compareTo(o2.getNick());
+            }
+        });
         student.saveList("sortlist.bin",studentList);
 
         /*
         Сделал проверку сохраненного в файл sortlist.bin результата
          */
-        List<Person> lookResults = new ArrayList<>();
-        lookResults=student.creatListFromFile("sortlist.bin",lookResults);
+        List<Person> lookResults = student.creatListFromFile("sortlist.bin");
         for (Person person : lookResults) {
             System.out.println(person);
-
         }
-
-
     }
 }
 
